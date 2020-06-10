@@ -26,7 +26,7 @@ Aqui trago algumas dicas para ajudá-lo a criar bancos de dados melhores e mais 
 
 [join.md](join.md)
 
-[Join.pdf](Join.pdf)
+[Join.pdf](ConsultasJoin.pdf)
 
 [Metadados.txt](Metadados.txt)
 
