@@ -1,0 +1,12 @@
+Remover diretório existente num repositório remoto do GitHub
+
+Suponha que quero remover do repositório "tutoriais" a pasta mini-mvc7, que está dentro da 6PHPOO/MVC, ou seja,
+6PHPOO/MVC/mini-mvc7
+
+Clone o repositório
+git clone git@github.com:ribafs/tutoriais.git
+
+git rm -r --cached 6PHPOO/MVC/mini-mvc7
+git commit -m "Removção do diretorio mini-mvc7"
+git push origin master
+

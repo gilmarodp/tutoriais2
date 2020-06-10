@@ -1,0 +1,56 @@
+Enviar arquivos para o GitHub
+
+1 - Enviar sua chave SSH do seu desktop para o GitHub
+
+Após criar sua conta no GitHub
+Acessar e clicar em seu avatar no canto direito superior
+Settings
+SSH and GPG Keys
+New SSH key
+Digite um Título
+Clique na caixa Key
+
+Volte para seu desktop e deixe esta tela acima aberta
+
+Em seu desktop execute:
+
+cd
+ssh-keygen -t rsa -b 4096 -C "ribafs@gmail.com"
+Enter
+Enter
+Enter
+
+Capturando o hash da senha
+cat ~/.ssh/id_rsa.pub
+
+Copie a chave mostrada desde ssh-rsa ... até seu e-mail, incluso.
+
+Volte ao GitHub
+E cole o hash copiado na caixa Key
+
+
+2 - Enviar seu projeto do seu desktop para o GitHub
+
+Crie um diretório
+Copie seu projeto para dentro do diretório
+cd diretório
+
+git config --global user.name "Ribamar FS"
+git config --global user.email "ribafs@gmail.com"
+git init
+git add .
+git commit -m "Primeiro Commit"
+git remote add origin git@github.com:ribafs/livro-php-fontes.git
+git push -f origin master
+
+Para enviar novamente caso haja alguma alteração
+- remover a pasta .git
+- e repetir os passos acima
+
+O projeto está agora hospedado no GitHub e pronto para ser abrigado pelo Packagist.
+
+
+3 - Cliente gráfico para Linux e Windows
+
+SmartGit
+

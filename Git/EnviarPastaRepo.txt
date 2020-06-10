@@ -1,0 +1,17 @@
+Tenho um repositório no GitHub com vários arquivos e pastas
+
+Então pretendo enviar uma pasta para o repositório
+
+Como proceder?
+
+Exemplo
+
+- Clonar o repositório localmente
+- Acessar o terminal
+- git clone git@github.com:ribafs/tutoriais.git
+- cd tutoriais
+- git add .
+- git commit 'Add nome pasta'
+- git push origin master
+
+

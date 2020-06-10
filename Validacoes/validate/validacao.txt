@@ -1,0 +1,176 @@
+- Adicionar aos bancos de dados - set_charset("utf8");
+$pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass,
+  array(
+  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+  PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
+  )
+);
+
+if ( strlen( $_POST[ 'comment'] ) >= 1 && strlen( $_POST[ 'comment' ] ) <= 256 )
+
+$comment = htmlentities ( trim ( $_POST[ 'comment' ] ) , ENT_NOQUOTES );
+
+- array
+FILTER_FORCE_ARRAY
+
+- int
+$value = '123abc456def';
+	echo filter_var($value, FILTER_SANITIZE_NUMBER_INT);
+FILTER_VALIDATE_INT
+<?php 
+$num = 500; 
+  
+if (!filter_var($num, FILTER_VALIDATE_INT) === false) { 
+    echo("Valid"); 
+} else { 
+    echo("Invalid"); 
+} 
+
+$id = "1 possible injection";
+
+if(filter_var($id, FILTER_VALIDATE_INT)){
+  $sanitize_id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
+  echo $sanitize_id;
+}else{
+	echo "error";
+}
+
+$name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+$email= filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+$search = filter_input(INPUT_GET, "s", FILTER_SANITIZE_STRING);
+$userID =  filter_var($_POST['userID'], FILTER_VALIDATE_INT);
+$userName = filter_var($_POST['userName'], FILTER_SANITIZE_STRING);
+$userEmail = filter_var($_POST['userEmail'], FILTER_VALIDATE_EMAIL);
+$_GET   = filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
+$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+- float
+$value02 = '1,234';
+	if(filter_var($value02,FILTER_VALIDATE_FLOAT)) {
+$value01 = 'http://w3programmers.com';
+	if(filter_var($value01,FILTER_VALIDATE_URL)) {
+$value = '<script>alert("TROUBLE HERE");</script>';
+	echo filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS);
+- string
+is_string() — Find whether the type of a variable is string
+$string = "<h1>Hello, World!</h1>";
+$new_string = filter_var($string, FILTER_SANITIZE_STRING);
+// $new_string is now "Hello, World!"
+- date
+- unique
+  
+Boas práticas
+echo htmlentities($string, ENT_QUOTES, 'UTF-8');
+
+Avoid
+preg_replace(), preg_replace_all(), preg_replace_callback()
+
+$email = 'myname@gmail.com';
+$emailSanitized = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+
+How to validate an Email using PHP?
+
+This article contains different methods to validate an email address in PHP. It uses regular expressions and inbuilt email validation function. The input string is taken from the user and matches it with the predefined regular expressions and if the regular expression and input string found to be matched than it returns true and proceed further.
+
+Method 1: Email validation using regular expression.
+filter_none
+
+
+<?php 
+// PHP program to validate email 
+  
+// Function to validate email using regular expression 
+function email_validation($str) { 
+    return (!preg_match( 
+"^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^", $str)) 
+        ? FALSE : TRUE; 
+} 
+  
+// Function call 
+if(!email_validation("author@geeksforgeeks.com")) { 
+    echo "Invalid email address."; 
+} 
+else { 
+    echo "Valid email address."; 
+} 
+  
+?> 
+Output:
+
+Valid email address.
+
+Explanation: In the above example, passing the email to the user defined function email_validation( $email ), which use this example and matches with the regular expression by using the predefined function preg_match(). This predefined function match the whole input with regular expression and returns True if match found otherwise returns False.
+
+Method 2: Email validation using filter_var() method.
+filter_none
+
+edit
+
+play_arrow
+
+brightness_4
+<?php 
+  
+// Declare variable and initialize 
+// it to email 
+$email = "author@geeksforgeeks.com"; 
+  
+// Validate email 
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) { 
+    echo("$email is a valid email address"); 
+}  
+else { 
+    echo("$email is not a valid email address"); 
+} 
+  
+?> 
+Output:
+
+author@geeksforgeeks.com is a valid email address
+
+Explanation: In the above example, passing the input email address to the predefined function filter_var(), which takes two parameters as input email and second is type of email filter. This function filters the email and returns true or false.
+
+Method 3: Email validation using FILTER_SANITIZE_EMAIL filter.
+filter_none
+
+edit
+
+play_arrow
+
+brightness_4
+<?php 
+  
+// Declare variable and store it to email 
+$email = "author.gfg@GeeksforGeeks.com"; 
+  
+// Remove all illegal characters from email 
+$email = filter_var($email, FILTER_SANITIZE_EMAIL); 
+  
+// Validate Email 
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) { 
+    echo("$email is a valid email address"); 
+}  
+else { 
+    echo("$email is not a valid email address"); 
+} 
+  
+?>  
+Output:
+
+author.gfg@GeeksforGeeks.com is a valid email address
+
+Explanation: In the above example, use FILTER_SANITIZE_EMAIL filter to remove all unsupported characters and then use FILTER_VALIDATE_EMAIL filter to validate email.
+
+
+
+<?php
+  $bad_string = "Hi! <script src='http://www.evilsite.com/bad_script.js'></script> It's a good day!";
+  $good_string = sanitize($bad_string);
+  // $good_string returns "Hi! It\'s a good day!"
+
+  // Also use for getting POST/GET variables
+  $_POST = sanitize($_POST);
+  $_GET  = sanitize($_GET);
+?>
+
+
