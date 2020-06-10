@@ -1,24 +1,5 @@
 # Tabelas
 
-CEP
-
-Tabela ceps normalizada
-```sql
-create table cepsn
-(
-	cep char(8) not null,
-	tipo int, 
-	logradouro int,
-	bairro int,
-	municipio int,
-	primary key(cep, logradour), 
-	constraint tipo_fk foreign key (tipo) references tipos(tipo),
-	constraint logradouro_fk foreign key (logradouro) references logradouros(logradouro),
-	constraint bairro_fk foreign key (bairro) references bairros(bairro),
-	constraint municipio_fk foreign key (municipio) references municipios(municipio)
-);
-
-
 Pessoas
 
 -- Tabelas
