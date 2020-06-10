@@ -12,3 +12,31 @@ As constraints e relacionamentos evitam registros duplicados e impede que dados 
 
 Aqui trago algumas dicas para ajudá-lo a criar bancos de dados melhores e mais eficientes.
 
+[Conversão entre SGBD](Conversao)
+
+[Constraints.md](Constraints.md)
+
+[Relacionamentos.md](Relacionamentos.md)
+
+[convencoes.md](convencoes.md)
+
+[Erros.md](Erros.md)
+
+[grandes-bancos.txt](grandes-bancos.txt)
+
+[join.md](join.md)
+
+[Join.pdf](Join.pdf)
+
+[Metadados.txt](Metadados.txt)
+
+[Normalizacao.pdf](Normalizacao.pdf)
+
+[select_mysql.txt](select_mysql.txt)
+
+[SQLite3.txt](SQLite.txt)
+
+[tabelas.md](tabelas.md)
+
+[utf8-mysql.txt](utf8-mysql.txt)
+
