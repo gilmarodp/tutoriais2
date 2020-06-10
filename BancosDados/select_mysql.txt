@@ -1,4 +1,3 @@
-TESTAR ANTES DE PUBLICAR
 
     // Função que popula uma combo com os registros de uma tabela, para campos insert e para campos update
 
