@@ -1,5 +1,5 @@
 <?php
-
+// Exemplo simples de herança e bem didático
 class Pai
 {
 	public function indexPai(){
