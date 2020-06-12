@@ -28,10 +28,10 @@ Dentro criar
 Para simplificar criarei apenas as classes controller e view
 ```php
 src
-	Controller
-		ClientesController.php
-	View	
-		ClientesView.php		
+    Controller
+        ClientesController.php
+    View	
+	ClientesView.php		
 index.php
 composer.json
 ```
@@ -54,6 +54,8 @@ Agora execute no diretório /var/www/html/ns
 composer dumpautoload
 
 Definindo as classes
+
+Obs.: a linha com namespace ... deve ser a primeira linha do arquivo.
 
 src/Controller/ClientesView.php
 ```php
@@ -95,10 +97,12 @@ $con = new ClientesController();
 $con->index();
 ```
 ## Alerta: 
-eu perdir um bom tempo pesquisando sobre o erro de que ele não encontrava a classe.
+Eu perdi um bom tempo pesquisando sobre o erro de que ele não encontrava a classe.
 Até que percebi que havia esquecido de criar o diretório src.
 Cuidado com a estrutura de diretórios.
 
+## Não mais includes/requires
+Veja que se usa uma única vez para incluir o autoload.php
 
 ## Duas formas de chamar um método de classe com namespace
 ```php
