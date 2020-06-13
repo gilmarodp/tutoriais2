@@ -2,7 +2,9 @@
 
 ## O que são migration
 
-São arquivos em php que podem tanto gerar a estrutura das tabelas quanto popular as tabelas com registros
+São arquivos em php que podem tanto gerar a estrutura das tabelas quanto popular as tabelas com registros.
+
+Os grandes frameworks usam e cada um de nós também pode usar em nossos aplicativos.
 
 ## Algumas vantagens das migrations
 
