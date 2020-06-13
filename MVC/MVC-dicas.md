@@ -2,7 +2,7 @@
 E recomendações para sua criação
 
 ## Projetos baixados da internet
-Da internet em geral e do GitHub em particupar. A grande maioria dos projetos que baixo para testar não funcionam, como foi o caso dos 44 MVC que divulguei no grupo PHP BRasil, dos quais baixei 42 e testei todos. Não chegou a 5 os que consegui rodar.
+Da internet em geral e do GitHub em particupar. A grande maioria dos projetos que baixo para testar não funcionam, como foi o caso dos 44 MVC que divulguei no grupo PHP Brasil, dos quais baixei 42 e testei todos. Não chegou a 5 os que consegui rodar.
 
 Boa parte contém erros, outra parte praticamente nem tem um README ou é insuficiente para entender.
 Outros não acompanham um script .sql de testes.
@@ -18,6 +18,18 @@ Alguns são consenso na comunidade e outros são apenas a minha preferência.
 
 Sei que a adoção de padrões pode variar de pessoa parar pessoa, mas vou divulgar os meus para ajudar quem ainda não tem o seu e tentando colaborar com quem já tem e pode otimizar.
 
+## Estrutura de arquivos
+```php
+.htaccess
+public/index.php (Front Controller)
+public/.htaccess
+public/assets
+app
+  controllers
+  models
+  views
+core
+```
 ## Sugestões
 ```php
 Uso de .htaccess
@@ -31,12 +43,22 @@ Não publique seu projeto antes que esteja pronto. Isso pode queimar seu filme. 
 Acompanhar um script sql no raiz para teste do aplicativo com facilidade
 Usar código que avisa que composer ainda não foi executado (abaixo) evitando a mensagem de erro
 Fornecener login e senha logo no início do README.md, caso precise de login e senha para testar aplicativo
+Que o usuário seja capaz de entender e colocar pra funcionar sem mesmo ler o README.md
 Preferir o uso do PDO, pois é o mais usado e com mais recursos  (genérica)
 Criar classes primárias em core/ e extender nas classes em app/
 Ao programar ter sempre em mente de facilitar a vida do usuário (genérica)
 Use CSS, o BootStrap ou outro framework CSS para deixar seu aplicativo mais elegante
 Procurar usar as melhores práticas e as recomendações de segurança (genérica)
 Nos diretórios app/ (no caso da estrutura que sugeri) inserir arquivos README.md com instruções de como o usuário proceder. Exemplo: Criar um controller, um model e uma pasta view para cada tabela extra adicionada. E sempre que achar por bem crie um README.md com orientações
+Tamves seja mais prático de lembrar que o namespace seja similar ao diretório. Exemplo:
+{
+    "autoload": {
+        "psr-4" : {
+            "App\\" : "App/",
+            "Core\\" : "Core/"
+        }
+    },
+}
 Evitar comunicação direta entre view e model. Sempre intermediar essa comunicação com o controller
 Usar e abusar de expressões condicionais. Exemplo abaixo (genérica)
 Crie o aplicativo que se destina ao público de forma que funcione em uma pasta do docRoot, pois se exigir um virtualhost dificulta o teste será mais trabalhoso.
