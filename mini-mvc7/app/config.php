@@ -6,7 +6,7 @@ define('URL_DOMAIN', $_SERVER['HTTP_HOST']); // localhost
 define('URL_SUB_FOLDER', str_replace(URL_PUBLIC_FOLDER, '', dirname($_SERVER['SCRIPT_NAME'])));// Raiz do aplicativo - /appfolder
 define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);// /localhost/appfolder/
 define('APP_TITTLE', 'Mini Full');
-define('CONTROLLER_DEFAULT', 'clientes');
+define('DEFAULT_CONTROLLER', 'clientes');
 define('DEBUG', true);
 
 define('DB_TYPE', 'mysql'); // mysql or pgsql
