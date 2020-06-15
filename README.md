@@ -6,6 +6,8 @@ Aqui resolvi detalhar mais alguns tópicos do repositório tutoriais e também m
 
 [BancosDados](BancosDados)
 
+  Administração de usuários e privilégios no PostgreSQL
+
 [CMSeFrameworks](CMSeFrameworks)
 
 [editor-tinymce](editor-tinymce)
