@@ -6,7 +6,8 @@ Aqui resolvi detalhar mais alguns tópicos do repositório tutoriais e também m
 
 [BancosDados](BancosDados)
 
-  Administração de usuários e privilégios no PostgreSQL
+  - Administração de usuários e privilégios no PostgreSQL
+  - Outros tópicos
 
 [CMSeFrameworks](CMSeFrameworks)
 
