@@ -87,6 +87,18 @@ $default = 'App\\Controllers\\ClientesController';
 
 $cli = new $default;
 
+## Observação sobre o dumpautoload -o
+
+Fui dar uma olhada e traduzi a documentação. Veja o que entendi e parece fazer sentido: usando -o o composer otimiza para um carregamento mais rápido das classes.
+
+Veja:
+Se você precisar atualizar o carregador automático devido a novas classes em um pacote de mapa de classes, por exemplo, poderá usar o dump-autoload para fazer isso sem precisar passar por uma instalação ou atualização.
+
+--optimize (-o): Converta o carregamento automático PSR-0/4 em mapa de classe para obter um carregador automático mais rápido. Isso é recomendado especialmente para produção, mas pode demorar um pouco para ser executado, portanto, atualmente não é feito por padrão.
+
+Então, em minha opinião agora, vale a pena sempre usara -o.
+Valeu Breno, na PHP Brasil.
+
 
 ## Referência
 https://dev.to/dechamp/php---how-to-fix-class--not-found-error-1gp9	
